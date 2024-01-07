@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>home</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+
+</head>
+
+<body>
+
+	<nav class="navbar navbar-expand-lg navbar-light bg-light blue">
+        <div class="container-fluid">
+            <div class="col-md-6">
+            <a class="navbar-brand" href="#">College Store</a>
+             </div>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="col-md-6">
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                   <a class="nav-link active" aria-current="page" href="home.html">Home</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Department
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                       <li><a class="dropdown-item" href="#">Commerce</a></li>
+                       <li><a class="dropdown-item" href="#">Science</a></li>
+                       <li><a class="dropdown-item" href="#">Humanities</a></li>
+                        <li><a class="dropdown-item" href="#">Computer</a></li>
+                        <li><a class="dropdown-item" href="#">Humanities</a></li>
+                    </ul>
+                </li>
+                {% if user.is_authenticated %}
+                <li> Hello {{user.username}}</li>
+                 <li class="nav-item">
+                    <a class="nav-link" href="logout">logout</a>
+                </li>
+                {% else %}
+                <li class="nav-item">
+                    <a class="nav-link" href="register">Register</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="login">login</a>
+                </li>
+                {% endif %}
+            </ul>
+        </div>
+        </div>
+        </div>
+    </nav>
+
+<div>
+    <div class="container">
+        <div class="col-lg-6 pr-xl-5 mt-4">
+            <h3 class="title-w3 mb-md-5 mb-sm-4 mb-2 text-center font-weight-bold">Welcome to the <span>College Store</span></h3>
+
+               <a class="service-btn mt-xl-5 mt-4 btn" href="detail">Register</a>
+
+
+        </div>
+
+   </div>
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+</html>
